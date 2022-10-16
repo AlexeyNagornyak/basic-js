@@ -15,7 +15,7 @@ function getSeason(date) {
   if(date == null){
     return 'Unable to determine the time of year!'
   }
-  if(!Date.parse(date)){
+  if(date instanceof Date === false || Object.getOwnPropertyNames(date).length){
     throw new Error('Invalid date!')
   }
   let now = new Date(date);
